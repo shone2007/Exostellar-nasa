@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight on Exoplanets</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000; 
+            color: #fff;
+            text-align: center;
+            background-image: url('space_bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #ffcc00;
+            font-size: 36px;
+            text-shadow: 2px 2px #000;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffc107;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .planet-image {
+            max-width: 200px;
+            margin: 20px auto;
+            display: none;
+            transition: all 0.3s;
+        }
+
+        .planet-image.show {
+            display: block;
+        }
+
+        .exoplanet-details {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 10px 20px;
+    height: 100px;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+font-weight:bold;
+}
+
+.nav-links a:hover {
+    background-color: #333;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    list-style: none;
+    top: 40px;
+    padding: 10px 0;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    width: 150px;
+}
+.logo a{
+text-decoration:none;
+color:white;
+}
+.logo a:hover{
+color:yellow;
+}
+a:hover{
+color:yellow;
+}
+    </style>
+</head>
+<body>
+<nav class="navbar">
+        <div class="logo">
+            <a href="nasa.html"><b>< back to home</b></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Discoveries</a></li>
+        </ul>
+</nav>
+      
+    <h1>Check Your Weight on Exoplanets</h1>
+    <div class="container">
+        <form id="weightForm">
+            <label for="exoplanet">Select an Exoplanet:</label>
+            <select id="exoplanet" required>
+                <option value="">--Choose an Exoplanet--</option>
+                <option value="0.91" data-image="exoplanet-p.jpg">Proxima Centauri b (Gravity: 0.91g)</option>
+                <option value="1.63" data-image="exoplanet-k.png">Kepler-452b (Gravity: 1.63g)</option>
+                <option value="1.87" data-image="exoplanet-c.jpg">55 Cancri e (Gravity: 1.87g)</option>
+                <option value="1.04" data-image="exoplanet-t.jpg">Teegarden's Star b (Gravity: 1.04g)</option>
+            </select>
+
+            <label for="weight">Enter Your Weight (in kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight" required>
+
+            <button type="submit">Calculate Weight</button>
+        </form>
+
+        <div class="result" id="result"></div>
+        
+        <!-- Container for displaying exoplanet images -->
+        <img id="planetImage" class="planet-image" src="" alt="Exoplanet Image">
+
+        <!-- Additional info about the selected exoplanet -->
+        <div id="exoplanetDetails" class="exoplanet-details"></div>
+    </div>
+
+    <script>
+        const exoplanetSelect = document.getElementById('exoplanet');
+        const planetImage = document.getElementById('planetImage');
+        const exoplanetDetails = document.getElementById('exoplanetDetails');
+        const exoplanetInfo = {
+            "Proxima Centauri b": "Proxima Centauri b is located 4.24 light-years away. It is the closest exoplanet to Earth.",
+            "Kepler-1649c": "Kepler-1649c is about 300 light-years away, and is considered an Earth-like planet.",
+            "TOI 700 d": "TOI 700 d is an Earth-sized exoplanet located 100 light-years away.",
+            "GJ 504b": "GJ 504b is a massive gas giant located 57 light-years away in the Virgo constellation.",
+            "K2-33b": "K2-33b is a young exoplanet located 456 light-years away, discovered by NASA's Kepler mission."
+        };
+
+        // Update the planet image and details when an exoplanet is selected
+        exoplanetSelect.addEventListener('change', function() {
+            const selectedOption = exoplanetSelect.options[exoplanetSelect.selectedIndex];
+            const imageSrc = selectedOption.getAttribute('data-image');
+            const planetName = selectedOption.textContent.split(' (')[0];  // Get planet name
+            
+            if (imageSrc) {
+                planetImage.src = imageSrc;
+                planetImage.classList.add('show');
+                exoplanetDetails.textContent = exoplanetInfo[planetName] || '';
+            } else {
+                planetImage.classList.remove('show');
+                exoplanetDetails.textContent = '';
+            }
+        });
+
+        // Calculate weight on the selected exoplanet
+        document.getElementById('weightForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            // Get the selected exoplanet gravity and user's weight
+            const gravity = exoplanetSelect.value;
+            const userWeight = document.getElementById('weight').value;
+
+            if (!gravity || !userWeight) {
+                alert('Please select an exoplanet and enter your weight.');
+                return;
+            }
+
+            // Calculate weight on the selected exoplanet
+            const weightOnExoplanet = userWeight * gravity;
+
+            // Display the result
+            document.getElementById('result').textContent = 
+                `Your weight on this exoplanet is: ${weightOnExoplanet.toFixed(2)} kg.`;
+        });
+    </script>
+
+</body>
+</html>

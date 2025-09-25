@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Tic Tac Toe</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: #fff;
+            border: 2px solid #444;
+            transition: background-color 0.3s;
+        }
+
+        .cell img {
+            width: 90%;
+            height: 90%;
+            display: none;
+        }
+
+        .cell:hover {
+            background-color: #f0f0f0;
+        }
+
+        .status {
+            margin: 20px 0;
+            font-size: 20px;
+            color: #444;
+        }
+
+        .restart-btn, .mode-select-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .restart-btn:hover, .mode-select-btn:hover {
+            background-color: #218838;
+        }
+
+        .popper {
+            display: none;
+            margin-top: 20px;
+            font-size: 30px;
+            color: #dc3545;
+        }
+
+        .mode-select {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exoplanet Tic Tac Toe</h1>
+        
+        <div class="mode-select">
+            <button class="mode-select-btn" id="playFriend">Play with Friend</button>
+            <button class="mode-select-btn" id="playBot">Play with Bot</button>
+        </div>
+
+        <div class="status">Choose a mode to start the game</div>
+        <div class="board">
+            <div class="cell" data-index="0"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="1"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="2"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="3"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="4"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="5"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="6"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="7"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+            <div class="cell" data-index="8"><img src="exoplanet1.jpg" alt="Exoplanet 1"></div>
+        </div>
+        <button class="restart-btn">Restart Game</button>
+        <div class="popper">🎉 Winner! 🎉</div>
+    </div>
+
+    <script>
+        const cells = document.querySelectorAll('.cell');
+        const statusText = document.querySelector('.status');
+        const restartBtn = document.querySelector('.restart-btn');
+        const popper = document.querySelector('.popper');
+        const playFriendBtn = document.getElementById('playFriend');
+        const playBotBtn = document.getElementById('playBot');
+        
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let currentPlayer = '1'; // Player 1 for Exoplanet 1, Player 2 for Exoplanet 2
+        let isGameActive = false;
+        let playWithBot = false;
+
+        const exoplanet1Img = 'exoplanet1.jpg'; // Replace with the actual path to Exoplanet 1 image
+        const exoplanet2Img = 'exoplanet-p.jpg'; // Replace with the actual path to Exoplanet 2 image
+
+        const winningConditions = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function handleCellClick(e) {
+            const cell = e.target.closest('.cell');
+            const index = cell.getAttribute('data-index');
+
+            if (board[index] !== '' || !isGameActive) return;
+
+            updateBoard(cell, index);
+            checkWinner();
+
+            if (playWithBot && currentPlayer === '2' && isGameActive) {
+                botMove();
+            }
+        }
+
+        function updateBoard(cell, index) {
+            board[index] = currentPlayer;
+            const img = cell.querySelector('img');
+            img.src = currentPlayer === '1' ? exoplanet1Img : exoplanet2Img;
+            img.style.display = 'block';
+            cell.style.pointerEvents = 'none';
+        }
+
+        function switchPlayer() {
+            currentPlayer = currentPlayer === '1' ? '2' : '1';
+            statusText.textContent = `Player ${currentPlayer === '1' ? '1' : '2'}'s turn`;
+        }
+
+        function checkWinner() {
+            let roundWon = false;
+
+            for (let i = 0; i < winningConditions.length; i++) {
+                const winCondition = winningConditions[i];
+                const a = board[winCondition[0]];
+                const b = board[winCondition[1]];
+                const c = board[winCondition[2]];
+
+                if (a === '' || b === '' || c === '') continue;
+                if (a === b && b === c) {
+                    roundWon = true;
+                    break;
+                }
+            }
+
+            if (roundWon) {
+                statusText.textContent = `Player ${currentPlayer} wins!`;
+                isGameActive = false;
+                popper.style.display = 'block';
+                return;
+            }
+
+            if (!board.includes('')) {
+                statusText.textContent = 'It\'s a tie!';
+                isGameActive = false;
+                return;
+            }
+
+            switchPlayer();
+        }
+
+        function restartGame() {
+            board = ['', '', '', '', '', '', '', '', ''];
+            currentPlayer = '1';
+            isGameActive = false;
+            statusText.textContent = `Choose a mode to start the game`;
+            cells.forEach(cell => {
+                const img = cell.querySelector('img');
+                img.style.display = 'none';
+                cell.style.pointerEvents = 'auto';
+            });
+            popper.style.display = 'none';
+        }
+
+        function startGame(withBot) {
+            playWithBot = withBot;
+            isGameActive = true;
+            currentPlayer = '1';
+            statusText.textContent = `Player 1's turn`;
+        }
+
+        function botMove() {
+            let emptyCells = [];
+            cells.forEach((cell, index) => {
+                if (board[index] === '') {
+                    emptyCells.push(index);
+                }
+            });
+
+            const randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            const randomCell = cells[randomIndex];
+            updateBoard(randomCell, randomIndex);
+            checkWinner();
+        }
+
+        playFriendBtn.addEventListener('click', () => startGame(false));
+        playBotBtn.addEventListener('click', () => startGame(true));
+        cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+        restartBtn.addEventListener('click', restartGame);
+    </script>
+</body>
+</html>

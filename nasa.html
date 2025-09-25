@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exoplanets</title>
+    <link rel="stylesheet" href="stylenasa.css">
+    
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="NASA Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="gallery.html">Explore</a></li>
+            <li>
+                <a href="#">Exoplanets Overview</a>
+                <ul class="dropdown">
+                    <li><a href="kepler.html">Kepler-452b</a></li>
+                    <li><a href="proxima.html">Proxima centuri b</a></li>
+                    <li><a href="Cancri e.html"> 55 cancri e</a></li>
+                    <li><a href="teagarden.html">Teegarden's star b</a></li>
+            
+                </ul>
+            </li>
+            <li><a href="#definition">Discoveries</a></li>
+            <li><a href="quis.html">Quiz❓</a></li>
+            <li><a href="game.html">game</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="live">
+            <a href="#" id="openModal">TM eXosteller</a>
+        </div>
+    </nav>
+
+    <!-- The Modal for Review Form -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="teaminside">Team eXosteller</h2>
+            <br>
+            <hr>
+            <br>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="project">Project Name:</label>
+                    <br>
+                   <h4 class="teaminside"><b>Exoplanets Discoveries</b></h4>
+                </div>
+
+                <div class="form-group">
+                    <label for="review">share your feedback:</label>
+                    <textarea id="review" placeholder="Enter your review" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>please rate our project:</label>
+                    <div class="star-rating">
+                        <input type="radio" name="rating" id="star5" value="5" required><label for="star5">&#9733;</label>
+                        <input type="radio" name="rating" id="star4" value="4"><label for="star4">&#9733;</label>
+                        <input type="radio" name="rating" id="star3" value="3"><label for="star3">&#9733;</label>
+                        <input type="radio" name="rating" id="star2" value="2"><label for="star2">&#9733;</label>
+                        <input type="radio" name="rating" id="star1" value="1"><label for="star1">&#9733;</label>
+                    </div>
+                </div>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+    <header class="hero">
+        <h1>Exoplanets</h1>
+        <div class="earth">
+            <video autoplay muted loop class="video-background" id="myvideo">
+                <source src="common.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <p class="exo-def">Welcome to our exoplanet study hub! Here, we explore planets beyond our solar system, known as exoplanets.
+                            Discover how scientists detect these distant worlds, learn about their diverse characteristics, and delve into their potential for habitability           
+                          Join us in unraveling the mysteries of these intriguing celestial bodies and their role in our understanding of the universe.</p>
+<button class="image-button">
+<a href="weight.html" class="button-link">
+    <img src="weight.png" alt="Button Image">
+    Measure Your Weight 
+</a>
+</button>
+
+   <br>
+    
+
+<div class="gallery">
+    <div class="gallery-item">
+        <div class="gallery-inner">
+            <!-- Wrap the link inside the gallery front so that clicking the image takes to the section -->
+                <div class="gallery-front">
+                    <img src="kepler6.jfif" alt="Kepler-452b">
+                </div>
+            <div class="gallery-back">
+                <a href="kepler.html" >
+                <h3>Kepler-452b</h3>
+<hr><br>
+
+                <p> Located about <u>1400 light-years away </u>from the earth </p>
+                </a>
+         </div>
+    </div>
+</div>
+
+
+<div class="gallery-item">
+     <div class="gallery-inner">
+          <!-- Link for TOI 700 Artists -->
+            <div class="gallery-front">
+                    <img src="exoplanet-p.jpg" alt="Proxima Centauri b">
+                </div>
+            <div class="gallery-back">
+                <a href="proxima.html" >
+                <h3>Proxima Centauri b</h3>
+                <p>A planetary system 4.2 light-years away in the constellation centaurus</p>
+                 </a>
+           </div>
+     </div>
+</div>
+
+
+<div class="gallery-item">
+    <div class="gallery-inner">
+        <div class="gallery-front">
+          <img src="exoplanet-t.jpg" alt="55 cancri e">
+        </div>
+        <div class="gallery-back">
+          <a href="Cancri e.html">
+          <h3>55 cancri e</h3>
+          <p>This is a Super Earth also called the Diamond Planet</p>
+          </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add more gallery items as needed -->
+<div class="gallery-item">
+   <div class="gallery-inner">
+      <div class="gallery-front">
+          <img src="tea1.jpg" alt="Tea Garden's star b">
+        </div>
+        <div class="gallery-back">
+          <a href="teagarden.html">
+          <h3>Teegarden's star b</h3>
+          <p>This is most alien planet we have geochemical data</p>
+          </a>
+       </div>
+    </div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<section id="definition">
+<div class="slideshow-container">
+ <!-- container 1............................................................ -->
+    <div class="mySlides fade">
+        <video autoplay muted loop class="video-background">
+            <source src="radial_velocity2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <center>
+        <h1>RADIAL VELOCITY</h1>
+    <h2>Watching for Wobble</h2>
+
+    <div class="info-box">
+        1091 planets discovered
+    </div>
+
+    <p>Orbiting planets cause stars to wobble in space, changing the color of the light astronomers observe.</p>
+
+    <span class="more-info">+ more info</span>
+</center>
+    <!-- Popup Structure -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <h1>RADIAL VELOCITY</h1>
+        <h2>Watching for Wobble</h2>
+            <video autoplay muted loop class="video-background">
+                <source src="radial_velocity2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <center>
+            
+    
+        <div class="info-box">
+            1091 planets discovered
+        </div><br><br>
+    <h2><font size="5" color="#a2a2e0">Understanding Planetary Motion through Gravity</h2></font><br>
+
+Imagine a game of tug-of-war between a massive star and a smaller planet. The star, with its strong gravitational pull, wins, which is why planets orbit stars and not the other way around. However, the smaller planet still exerts a gravitational force that affects the star, causing it to "wobble" slightly.
+<video autoplay muted loop class="video-background">
+    <source src="radial2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<br>
+<h2><center><font size="5" color="#a2a2e0">The Wobble Effect</font></center></h2>
+
+The size of the planet influences the wobble: smaller planets like Earth cause a tiny wobble, while larger planets like Jupiter create a more noticeable effect. This star wobble can indicate the presence, number, and size of orbiting planets.<br><br>
+
+<br><br>
+
+<h2><center><font size="5" color="#a2a2e0">Detecting Wobbling Stars: The Doppler Effect</font></center></h2>
+
+To observe these wobbles, astronomers use the Doppler shift. When a source of energy (like a star) moves, it compresses or stretches light waves. For example, as an ambulance approaches, its sound pitch increases, then decreases as it moves away.
+
+Blueshift occurs when waves compress (moving towards us).
+
+Redshift occurs when waves stretch (moving away from us).
+<video autoplay muted loop class="video-background">
+    <source src="radial3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video><br><br>
+<h2><center><font size="5" color="#a2a2e0">Observing Exoplanets</font></center></h2>
+
+As a planet causes its star to wobble, the light waves from the star also compress and stretch, leading to observable color changes. This method, known as the radial velocity method, has been highly successful in discovering exoplanets and is often used alongside other detection methods for confirmation.
+
+Major observatories, such as the Keck Telescopes in Hawaii and the La Silla Observatory in Chile, utilize this technique to explore and confirm the existence of exoplanets.
+<br><br><br>
+<h2><center><font size="5" color="#a2a2e0">Next Steps: The Transit Method</font></center></h2>
+
+            <span class="close-popup">Close</span>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the popup
+        const popup = document.getElementById('popup');
+        const moreInfo = document.querySelector('.more-info');
+        const closePopup = document.querySelector('.close-popup');
+
+        moreInfo.addEventListener('click', function() {
+            popup.style.display = 'flex';
+        });
+
+        closePopup.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+
+        // Close the popup when clicking outside the content
+        window.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+    </div>
+    <!-- container 2............................................................ -->
+    <div class="mySlides fade">
+        <video autoplay muted loop class="video-background">
+            <source src="transit-method-single-planet.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <center>
+            <h1>TRANSIT</h1>
+            <h2>Searching for Shadow</h2>
+    
+            <div class="info-box">
+                4291 planets discovered
+            </div>
+    
+            <p>Orbiting planets cause stars to wobble in space, changing the color of the light astronomers observe.</p>
+    
+            <span class="more-info" data-popup="popup2">+ more info</span>
+        </center>
+        
+        <!-- Popup Structure -->
+        <div class="popup-overlay" id="popup2">
+            <div class="popup-content">
+                <center>
+                    <h1>TRANSIT</h1>
+                    <h2>Searching for Shadow</h2>
+                </center>
+                <video autoplay muted loop class="video-background">
+                    <source src="transit-method-single-planet.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="info-box">
+                    1091 planets discovered
+                </div><br><br>
+            <h2><font size="5" color="#a2a2e0">Transit method</h2></font><br>
+        
+            When a planet passes between its star and an observer, it blocks a small part of the star’s light, causing it to dim slightly. This dimming helps scientists find exoplanets.
+            <center><img src="transit1.jpg" alt="Description of the image" title="Photo by Photographer/Source" width="500px" height="500px"></center>
+        <br>
+        <h2><center><font size="5" color="#a2a2e0">Solar Eclipse Comparison:</font></center></h2>
+        
+         A solar eclipse is when the Moon blocks the Sun’s light. The transit method works similarly, where a planet passing in front of its star blocks some of its light. Although the dimming is small, it's enough for astronomers to detect an exoplanet.
+<br><br>
+        
+        <br><br>
+        
+        <h2><center><font size="5" color="#a2a2e0">Light Curve:</font></center></h2>
+        
+         A light curve is a graph that shows how much light is coming from a star. When a planet passes in front of the star, the light dims, and the graph shows this drop.
+        
+        Redshift occurs when waves stretch (moving away from us).<br><br>
+        <center><img src="transit2.png" alt="Description of the image" title="Transit of a planet in front of a star, and the effect on the overall light coming from the star (transit light curve). Image credit: https://web.njit.edu/~gary/320/Lecture10.html" width="400px" height="300px"></center>
+        <br><br>
+        <h2><center><font size="5" color="#a2a2e0">What We Learn from Transits : </font></center></h2>
+        
+
+Bigger planets block more light, creating deeper dips in the light curve. The farther a planet is from its star, the longer it takes to complete an orbit, making the dimming last longer.
+        <br><br><br>
+        <video autoplay muted loop class="video-background">
+            <source src="transit_method_double_planet.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video><br><br>
+        <h2><center><font size="5" color="#a2a2e0">Multiple Planets</font></center></h2>
+        
+If more than one planet orbits a star, their transits make the light curve more complicated. Astronomers can still identify each planet, but it takes more work.<br><br>
+
+        <h2><center><font size="5" color="#a2a2e0"> Atmosphere Information </font></center></h2>
+       
+        When a planet passes in front of its star, some light passes through its atmosphere. By studying this light, scientists can learn about the planet’s atmosphere, like whether it contains water vapor or methane.
+        <br><br>
+        <h2><center><font size="5" color="#a2a2e0">Transit Method Success </font></center></h2>
+    
+        The transit method has been very successful. NASA’s Kepler mission used it to discover thousands of possible exoplanets, helping astronomers learn about the galaxy’s planets.
+        <br><br>
+        <h2><center><font size="5" color="#a2a2e0">Next Steps: The Transit Method</font></center></h2>
+                <span class="close-popup">Close</span>
+            </div>
+        </div>
+    
+        
+    </div>
+    
+    <script>
+        // JavaScript to handle the popup
+        document.querySelectorAll('.more-info').forEach(button => {
+            button.addEventListener('click', function() {
+                const popupId = this.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'flex';
+            });
+        });
+    
+        document.querySelectorAll('.close-popup').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.popup-overlay').style.display = 'none';
+            });
+        });
+    
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('popup-overlay')) {
+                event.target.style.display = 'none';
+            }
+        });
+    </script>
+   <!-- container 3............................................................ --> 
+   <div class="mySlides fade">
+    <video autoplay muted loop class="video-background">
+        <source src="direct-imaging.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <center>
+        <h1>DIRECT IMAGING</h1>
+        <h2>Taking Picture</h2>
+
+        <div class="info-box">
+            82 planets discovered
+        </div>
+
+        <p>Orbiting planets cause stars to wobble in space, changing the color of the light astronomers observe.</p>
+
+        <span class="more-info" data-popup="popup3">+ more info</span>
+    </center>
+    
+    <!-- Popup Structure -->
+    <div class="popup-overlay" id="popup3">
+        <div class="popup-content">
+            <center>
+                <h1>DIRECT IMAGING</h1>
+                <h2>Taking Picture</h2>
+            </center>
+            <video autoplay muted loop class="video-background">
+                <source src="direct-imaging.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <center>
+            <div class="info-box">
+                82 planets discovered
+            </div>
+            </center>
+            <h2><font size="5" color="#a2a2e0">Direct Imaging</h2></font><br>
+
+            
+Direct imaging is one of the most exciting ways astronomers find exoplanets—planets outside our solar system. So far, 82 planets have been discovered using this method. But taking pictures of these far-off planets isn’t as easy as taking a photo of planets like Jupiter or Venus. Why? 
+Because exoplanets are very far away and hidden by the bright light of the stars they orbit.
+
+
+          
+            <br><br><br>
+            <h2><center><font size="5" color="#a2a2e0">The Challenge </font></center></h2>
+            
+            
+
+            Exoplanets are much dimmer than their host stars. The star's light is so strong that it drowns out the planet's light, making it almost impossible to see the planet. 
+            <br><br>
+            It's like"trying to spot a tiny insect next to a bright flashlight"<br><br>
+            
+            <br><br>
+            <img src="direct1.jpg" width="400px" height="500px">
+            <h2><center><font size="5" color="#a2a2e0"> Blocking the Light</font></center></h2>
+            
+
+            To see exoplanets, astronomers need to block the star's light, just like we use sunglasses to block out sunlight. Special tools have been created to block the star's brightness so we can see the planets near them.
+            
+            <br><br>
+            <h2><center><font size="5" color="#a2a2e0">Two Main Techniques</font></center></h2>
+            <br><br><br>
+            <img src="direct2.jpg" width="400px" height="500px">
+            <h2><center><font size="5" color="#a2a2e0">1. Coronography:</font></center></h2>
+            
+             This tool is built inside telescopes and blocks a star’s light, helping us see the faint light of nearby planets. It's already being used in telescopes on Earth.
+            <br><br><video autoplay muted loop class="video-background">
+                <source src="direct3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video><br><br>
+            <h2><center><font size="5" color="#a2a2e0">2. Starshade:</font></center></h2>
+             This is a spacecraft that would fly in front of a space telescope. It blocks the light from the star before it reaches the telescope, helping astronomers detect planets more clearly from space.
+             <h2><center><font size="5" color="#a2a2e0">2.he Future of Direct Imaging </font></center></h2>
+
+
+Although it’s still a new method, direct imaging has a lot of promise. In the future, astronomers hope to use it to take pictures so clear they might show details like weather patterns, oceans, or even land on exoplanets.
+
+These advancements could help us discover more planets and learn whether they could support life.
+            <br><br><br>
+            <span class="close-popup">Close</span>
+        
+        </div>
+    </div>
+
+    
+</div>
+
+
+<script>
+    // JavaScript to handle the popup
+    document.querySelectorAll('.more-info').forEach(button => {
+        button.addEventListener('click', function() {
+            const popupId = this.getAttribute('data-popup');
+            document.getElementById(popupId).style.display = 'flex';
+        });
+    });
+
+    document.querySelectorAll('.close-popup').forEach(button => {
+        button.addEventListener('click', function() {
+            this.closest('.popup-overlay').style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('popup-overlay')) {
+            event.target.style.display = 'none';
+        }
+    });
+</script>
+    <!-- container 4............................................................ --> 
+    <div class="mySlides fade">
+        <video autoplay muted loop class="video-background">
+            <source src="gravitational_microlensing.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <center>
+            <h1>GRAVITATIONAL MICROLENSING</h1>
+            <h2>Light in a Gravitational Lens</h2>
+    
+            <div class="info-box">
+                225 planets discovered
+            </div>
+    
+            <p>New methods of detecting exoplanets open up exciting possibilities for discovery.</p>
+    
+            <span class="more-info" data-popup="popup1">+ more info</span>
+        </center>
+        
+        <!-- Popup Structure -->
+        <div class="popup-overlay" id="popup1">
+            <div class="popup-content">
+                <center>
+                    <h1>GRAVITATIONAL MICROLENSING</h1>
+                    <h2>Light in a Gravitational Lens</h2>
+                    </center>
+                <video autoplay muted loop class="video-background">
+                <source src="gravitational_microlensing.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <center>
+                <div class="info-box">
+                    225 planets discovered
+                </div>
+        </center>
+        <h2><center><font size="5" color="#a2a2e0"> Gravitational Microlensing </font></center></h2>
+
+A Cosmic Magnifying Glass<br>
+
+
+
+
+Gravitational microlensing is a fascinating phenomenon that allows astronomers to discover distant planets and stars by using the gravitational pull of objects in space as a lens. Here’s how it works:
+
+
+<h2><center><font size="5" color="#a2a2e0"> The Bending of Light </font></center></h2>
+Albert Einstein's theory of relativity showed us that gravity doesn’t just pull objects together—it also bends the fabric of space. This bending can affect how light moves. When a planet or star passes between a distant star and Earth, the gravity of that object can bend the light of the distant star, making it appear brighter to observers on Earth.
+ <br>
+<img src="gravity1.JFIF " class="gravity1"> <br><br><br>
+<img src="gravity2.svg" class="gravity2">  
+<br><br><br><br>
+<h2><center><font size="5" color="#a2a2e0"> How Microlensing Works </font></center></h2>
+Think of it like using a magnifying glass: the gravity of a planet or star acts like a lens, focusing the light from a distant star and making it temporarily brighter. As the object moves, the light bends in different ways, causing the brightness of the distant star to increase and then fade. 
+<BR><BR>
+<img src="transit3.jfif" width="500px" height="500px" >   <br><br>
+In some cases, when a planet is involved, a brief spike in brightness occurs, which tells astronomers that a planet may be orbiting the star. This spike appears as a blip of light in the otherwise smooth brightening and dimming process of the star.  
+<br><br><br>
+<video autoplay muted loop class="video-background">
+    <source src="gravity4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video><br><br><br>
+<h2><center><font size="5" color="#a2a2e0"> What Astronomers See</font></center></h2>
+
+When astronomers observe a lensing event, it looks like a distant star is getting gradually brighter over several weeks before fading away. If a planet is involved, the light will briefly brighten even more before continuing to dim. This data gives scientists clues about the size and presence of the star and planet involved.
+
+<h2><center><font size="5" color="#a2a2e0">Discovering Rogue Planets</font></center></h2>
+Gravitational microlensing also helps astronomers find "rogue planets," which are planets that don't orbit a star. These planets cause quick microlensing events, offering insight into how common these free-floating planets are in the galaxy.
+<br><br><img src="gravity5.jfif" class="gravity1"><br><br><br>
+In this way, gravitational microlensing has helped discover over<b> 225 exoplanets </b>, revealing the hidden wonders of our universe.
+<br><br><br><br> <br><br><br><br><br><br><br><br> 
+<span class="close-popup">Close</span>
+            </div>
+        </div>
+    
+        <div class="text">Caption Four</div>
+    </div>
+    
+    <script>
+        // JavaScript to handle the popup
+        document.querySelectorAll('.more-info').forEach(button => {
+            button.addEventListener('click', function() {
+                const popupId = this.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'flex';
+            });
+        });
+    
+        document.querySelectorAll('.close-popup').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.popup-overlay').style.display = 'none';
+            });
+        });
+    
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('popup-overlay')) {
+                event.target.style.display = 'none';
+            }
+        });
+    </script>
+    <div class="mySlides fade">
+        <!-- container 5............................................................ -->
+
+ 
+      
+    
+        <video autoplay muted loop class="video-background">
+            <source src="astrometry.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <center>
+            <h1>Astrometry </h1>
+            <h2>Mapping the the star & measuring the universe</h2>
+    
+            <div class="info-box">
+            3 planets discovered
+            </div>
+    
+            <p>New methods of detecting exoplanets open up exciting possibilities for discovery.</p>
+    
+            <span class="more-info" data-popup="popup4">+ more info</span>
+        </center>
+        
+        <!-- Popup Structure -->
+        <div class="popup-overlay" id="popup4">
+            <div class="popup-content">
+                <center>
+                    <h1>Astrometry </h1>
+                    <h2>Light in a Gravitational Lens</h2>
+                    </center>
+                <video autoplay muted loop class="video-background">
+                    <source src="astrometry.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <center>
+                    <div class="info-box">
+                        3 planets discovered
+                    </div>
+            </center>
+                The orbit of a planet can make its star wobble slightly in space. This happens because the planet’s gravity pulls on the star, causing it to move just a bit in relation to nearby stars. One method scientists use to detect this wobble is called astrometry.
+<br><br>
+                Astrometry involves tracking the position of a star in the sky over time. Scientists take multiple pictures of a star and the nearby stars and then compare them. If the star they’re observing changes position compared to the nearby stars, it might be due to an orbiting planet.
+                <br><br>             
+                However, this method is extremely challenging. The wobble is so tiny that it’s hard to spot, especially for small planets like Earth. Plus, the Earth's atmosphere distorts the light, making it even harder to get accurate measurements.
+                <br><br>
+                In summary, astrometry is a powerful but difficult method for finding planets by observing the small wobbles of stars caused by their planets' gravity.
+                <br><br>
+                <span class="close-popup">Close</span>
+            </div>
+        </div>
+    
+        
+    </div>
+    
+    <script>
+        // JavaScript to handle the popup
+        document.querySelectorAll('.more-info').forEach(button => {
+            button.addEventListener('click', function() {
+                const popupId = this.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'flex';
+            });
+        });
+    
+        document.querySelectorAll('.close-popup').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.popup-overlay').style.display = 'none';
+            });
+        });
+    
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('popup-overlay')) {
+                event.target.style.display = 'none';
+            }
+        });
+    </script>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+      <span class="dot" onclick="currentSlide(5)"></span> 
+    </div>
+</section>
+<!---footer--->
+<br><br><br>
+<div class="footer">
+<h1>Thank You</h1>
+<p>Powered by <a href="nasa.html"> TM eXosteller</a></p>
+
+</div>
+    <script>
+        // Get modal and open/close elements
+        var modal = document.getElementById("reviewModal");
+        var btn = document.getElementById("openModal");
+        var span = document.getElementsByClassName("close")[0];
+        var pageContent = document.querySelector(".page-content");
+
+btn.onclick = function() {
+    modal.style.display = "block";
+    pageContent.style.opacity = "10"; // Reduce opacity of the page content
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+    pageContent.style.opacity = "1"; // Reset opacity when modal is closed
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        pageContent.style.opacity = "1"; // Reset opacity when modal is closed
+    }
+}
+
+        // Handle form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Display a success message or clear the form
+            alert("Thank you for your review!");
+
+            // Close modal after submission
+            modal.style.display = "none";
+
+            // Clear form inputs
+            document.getElementById('reviewForm').reset();
+        });
+    </script>
+<script>
+        // Search function to highlight matching text
+        document.getElementById("searchButton").addEventListener("click", function() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const bodyContent = document.body.innerHTML;
+
+            // Reset previous highlights
+            document.body.innerHTML = document.body.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
+
+            if (searchTerm) {
+                const regex = new RegExp(searchTerm, "gi");
+                document.body.innerHTML = bodyContent.replace(regex, function(matched) {
+                    return `<span class="highlight">${matched}</span>`;
+                });
+            }
+        });
+    </script>
+    <script>
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+<script>
+    const video = document.getElementById('myVideo');
+    video.addEventListener('loadedmetadata', function() {
+        video.playbackRate = 2; // Set speed to 1.5x
+    });
+</script>
+
+</body>
+</html>

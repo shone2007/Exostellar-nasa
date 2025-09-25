@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exoplanet Quiz</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 10px 20px;
+    height: 100px;
+}
+
+.logo img {
+    width: 50px;
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+    h1 {
+      color: #4CAF50;
+    }
+    .quiz-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 60%;
+      margin: auto;
+      padding: 20px;
+    }
+    .question {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+    .options li {
+      background-color: #eee;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .options li:hover {
+      background-color: #c8e6c9;
+    }
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    #score {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #ff5722;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="nasa.html">
+            <img src="logo.jpg" alt="NASA Logo">
+            </a>
+        </div>
+    </nav>
+  <h1>Exoplanet Explorer Quiz</h1>
+
+  <div class="quiz-container" id="quiz">
+
+    <div id="question-container">
+      <div class="question" id="question">Question text</div>
+      <ul class="options" id="options"></ul>
+    </div>
+    <button class="btn" id="next-btn" onclick="nextQuestion()">Next</button>
+    <div id="score"></div>
+  </div>
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is an exoplanet?",
+        options: ["A planet outside our solar system", "A star", "A comet", "A moon"],
+        answer: 0
+      },
+      {
+        question: "How do scientists detect exoplanets?",
+        options: ["By sending probes", "By studying star wobbles", "By using radar", "By taking pictures"],
+        answer: 1
+      },
+      {
+        question: "Which method is most commonly used to find exoplanets?",
+        options: ["Transit method", "Direct imaging", "Gravitational lensing", "Radio waves"],
+        answer: 0
+      },
+      {
+        question: "What is the habitable zone?",
+        options: ["A region where liquid water can exist", "A place where humans can live", "The core of a planet", "A galaxy cluster"],
+        answer: 0
+      },
+      {
+        question: "What was the first exoplanet discovered called?",
+        options: ["Kepler-186f", "51 Pegasi b", "Proxima Centauri b", "Trappist-1d"],
+        answer: 1
+      },
+      {
+        question: "Which is the nearest known exoplanet?",
+        options: ["Kepler-10b", "Proxima Centauri b", "51 Pegasi b", "Trappist-1e"],
+        answer: 1
+      },
+      {
+        question: "What tool is used to observe exoplanets?",
+        options: ["Hubble Space Telescope", "James Webb Space Telescope", "Large Hadron Collider", "Radio Telescope"],
+        answer: 1
+      },
+      {
+        question: "What is the primary factor for an exoplanet to be habitable?",
+        options: ["Size", "Distance from the star", "Color", "Speed of rotation"],
+        answer: 1
+      },
+      {
+        question: "Which telescope has discovered the most exoplanets?",
+        options: ["Hubble Space Telescope", "Kepler Space Telescope", "Spitzer Space Telescope", "VLT"],
+        answer: 1
+      },
+      {
+        question: "What is the most Earth-like exoplanet discovered?",
+        options: ["Kepler-186f", "Proxima Centauri b", "Gliese 581g", "Trappist-1e"],
+        answer: 0
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const currentQuestion = quizData[currentQuestionIndex];
+      document.getElementById("question").textContent = currentQuestion.question;
+      const optionsList = document.getElementById("options");
+      optionsList.innerHTML = '';
+      currentQuestion.options.forEach((option, index) => {
+        const li = document.createElement("li");
+        li.textContent = option;
+        li.onclick = () => selectOption(index);
+        optionsList.appendChild(li);
+      });
+    }
+
+    function selectOption(selectedIndex) {
+      const currentQuestion = quizData[currentQuestionIndex];
+      if (selectedIndex === currentQuestion.answer) {
+        score++;
+      }
+      document.getElementById("next-btn").disabled = false;
+    }
+
+    function nextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizData.length) {
+        loadQuestion();
+        document.getElementById("next-btn").disabled = true;
+      } else {
+        showScore();
+      }
+    }
+
+    function showScore() {
+      document.getElementById("question-container").style.display = 'none';
+      document.getElementById("score").textContent = `Your score is: ${score} out of 10`;
+
+      // Trigger the confetti popper effect
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // Start the quiz by loading the first question
+    loadQuestion();
+  </script>
+
+</body>
+</html>

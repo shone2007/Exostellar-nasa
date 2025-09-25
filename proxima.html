@@ -1,0 +1,493 @@
+<html>
+ <head>
+   <title>Proxima Centuria b</title>
+   <link href="stylenasa.css" rel="stylesheet">
+<style>
+    .proxima-img{
+width:500px;
+height:500px;
+margin-right: 1px;
+margin-top:40px;
+float:right;
+}
+.keplers h1{
+margin-left:100px;
+}
+.keplers p{
+text-align:center;
+font-size:19px;
+margin-top:20px;
+}
+
+h5{
+float: left;
+font-size:19px;
+margin-top:20px;
+}
+.containert{
+    margin-top: 30;
+    margin-left: 150px;
+}
+  /* Container styling */
+  .containert {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    /* Heading styling */
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Styling the travel info section */
+    .travel-info {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .info-block {
+      background-color: #f0f8ff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 45%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-block h2 {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .info-block p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e74c3c;
+      margin-bottom: 5px;
+    }
+
+    .unit {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    /* Button group styling */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .transport-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .transport-btn:hover {
+      background-color: #2980b9;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .travel-info {
+        flex-direction: column;
+      }
+
+      .info-block {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .button-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .transport-btn {
+        width: 100%;
+      }
+    }
+
+
+    .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            font-size: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            padding: 20px;
+            width: 30%;
+            border-radius: 10px;
+        }
+
+        .info-item .label {
+            font-weight: bold;
+            color: #ffa500;
+        }
+
+        .info-item .value {
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+        }
+
+        .comparison-card {
+            background-color: #000000;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .comparison-card h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ac0707;
+        }
+
+        .comparison-card .item {
+            margin-bottom: 20px;
+        }
+
+        .comparison-card .label {
+            font-weight: bold;
+            font-size: 18px;
+            color: #f0cf17;
+        }
+
+        .comparison-card .value {
+            font-size: 22px;
+            color: #ffffff; /* Orange color */
+        }
+
+        .comparison-card img {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .comparison-card img{
+         margin-left: 40px;
+        }
+        .orbital{
+margin-left: 300px;
+        }
+    </style>
+ </head>   
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="nasa.html">
+            <img src="logo.jpg" alt="NASA Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="gallery.html">Explore</a></li>
+            <li>
+                <a href="#">Exoplanets Overview</a>
+                <ul class="dropdown">
+                  <li><a href="kepler.html">Kepler-452b</a></li>
+                  <li><a href="proxima.html">Proxima centuri b</a></li>
+                  <li><a href="Cancri e.html"> 55 cancri e</a></li>
+                  <li><a href="teagarden.html">Tea Garden's star b</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="live">
+            <a href="#" id="openModal">TM eXosteller</a>
+        </div>
+    </nav>
+
+    <!-- The Modal for Review Form -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="teaminside">Team eXosteller</h2>
+            <br>
+            <hr>
+            <br>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="project">Project Name:</label>
+                    <br>
+                   <h4 class="teaminside"><b>Exoplanets Discoveries</b></h4>
+                </div>
+
+                <div class="form-group">
+                    <label for="review">share your feedback:</label>
+                    <textarea id="review" placeholder="Enter your review" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>please rate our project:</label>
+                    <div class="star-rating">
+                        <input type="radio" name="rating" id="star5" value="5" required><label for="star5">&#9733;</label>
+                        <input type="radio" name="rating" id="star4" value="4"><label for="star4">&#9733;</label>
+                        <input type="radio" name="rating" id="star3" value="3"><label for="star3">&#9733;</label>
+                        <input type="radio" name="rating" id="star2" value="2"><label for="star2">&#9733;</label>
+                        <input type="radio" name="rating" id="star1" value="1"><label for="star1">&#9733;</label>
+                    </div>
+                </div>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+    <div class="keplers">
+        
+    <div class="proxima-img">
+      <img src="exoplanet-p.jpg">
+    </div>
+    <br><br><br><br><br><br><br>
+    <center><h1><b><font color="orange">Proxima Centauri b</font></b></h1></center>
+    <br>
+    <p>
+      Imagine you have a friend who lives very far away, but not on Earth. This friend lives on a planet called Proxima Centauri b. This planet is special because it goes around a star named Proxima Centauri, which is the closest star to our Sun. 🌞
+<br><br>
+      Here are some cool things about Proxima Centauri b:
+    </p>
+    <br>
+       <br><br>
+         <h5><font color="orange">• Distance</font> <br></h5>
+        <br><br><br>
+        <p>&nbsp;&nbsp; It’s about 4.2 light-years away from us. That’s super far! If you could travel at the speed of light (which is really, really fast), it would still take you over 4 years to get there! 🚀<br>
+    </p>
+    <h5><font color="orange">• Orbit: </font> <br></h5>
+    <br><p>It goes around its star very quickly. While Earth takes 365 days to go around the Sun, Proxima Centauri b takes just 11 days to go around its star. That’s like having a birthday every 11 days! 🎂
+      Temperature: It’s in a special place called the “habitable zone,” where it’s not too hot and not too cold. This means it might have the right conditions for life, like having water. 💧
+      Star: The star it orbits, Proxima Centauri, is a red dwarf. This star is smaller and cooler than our Sun, but it can be very active and send out big bursts of energy. 🌟</p>
+    <div class="containert">
+        <h1>How long to Travel Here from Earth?</h1>
+        <br><br>
+        <div class="travel-info">
+          <div class="info-block">
+            <h2>Travel Speed</h2>
+            <p id="speedValue">--</p>
+            <p class="unit">Million miles per hour</p>
+          </div>
+          <div class="info-block">
+            <h2>Travel Time</h2>
+            <p id="timeValue">--</p>
+            <p class="unit">Years</p>
+          </div>
+        </div>
+        <div class="transport-options">
+          <div class="button-group">
+            <button onclick="calculateTime('auto')" class="transport-btn">AUTO🛺🛺</button>
+            <button onclick="calculateTime('bullet')" class="transport-btn">BULLET TRAIN🚆🚆🚂🚂</button>
+            <button onclick="calculateTime('jet')" class="transport-btn">JET✈✈</button>
+            <button onclick="calculateTime('voyager')" class="transport-btn">VOYAGER📡📡</button>
+            
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <h5><font color="orange">• Size :</font> <br></h5>
+      <br><br><br>
+      <p>&nbsp;&nbsp;Proxima Centauri b is almost the same size as Earth. So, if you stood on it, it might feel a bit like home. 🌍<br>
+  </p>
+        <br><br><br><br>
+        
+  
+      
+        <div class="container">
+
+          <!-- Planet Comparison Card -->
+          <div class="comparison-card">
+              <h2>Planet Comparison</h2>
+              <hr><br>
+              <div class="item">
+                  <span class="label">Mass</span><br>
+                  <span class="value">1.17 × Earth</span>
+              </div>
+              <div class="item">
+                  <span class="label">Radius</span><br>
+                  <span class="value">1.03 × Earth</span>
+              </div>
+  
+              <!-- Image for planet comparison -->
+              <b><font color="grey">Proxima Centauri b</font>&nbsp;&nbsp;&nbsp;<font color="silver">Earth</font></b>
+              <img src="proxima6.jfif" alt="Kepler-452b vs Earth">
+          </div>
+  
+          <!-- Star Comparison Card -->
+          <div class="comparison-card">
+              <h2>Star Comparison</h2>
+              <hr><br>
+              <div class="item">
+                  <span class="label">Mass</span><br>
+                  <span class="value">0.12 × Our Sun</span>
+              </div>
+              <div class="item">
+                  <span class="label">Radius</span><br>
+                  <span class="value">0.14 × Our Sun</span>
+              </div>
+  
+              <!-- Image for star comparison -->
+              <b><font color="#a28a70">Proxima Centauri </font>&nbsp;&nbsp;&nbsp;<font color="orange">our sun</font></b>
+              <img src="proxima7.jfif" alt="Kepler-452 vs Sun">
+          </div>
+  
+      </div>
+  
+      
+        <br><br>
+        <h5><font color="orange">•Orbit:</font> <br></h5>
+      <br><br><br>
+      <p>&nbsp;&nbsp; 
+        Proxima Centauri b orbits its star, Proxima Centauri, at an average distance of about 0.0485 AU (Astronomical Units), which is much closer than Earth is to the Sun. It completes one orbit in approximately 11.2 Earth days, making its year significantly shorter than ours. This close orbit places Proxima Centauri b in the habitable zone, where conditions might allow for the presence of liquid water. 🌌 🎂
+        <br>
+  </p>
+  <br><br><br><br><br><br> <br>
+        <!-- Info Section -->
+      <div class="info">
+        <div class="info-item">
+            <span class="label">Orbital Radius</span><br>
+            <span class="value">0.0485 AU</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Orbital Period</span><br>
+            <span class="value">11.2 dayss</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Orbital Eccentricity</span><br>
+            <span class="value">0.1</span>
+        </div>
+    </div>
+
+        <br><br><br>
+        <h5><font color="orange">•Orbital eccentricity:</font> <br></h5>
+        <br><br><br>
+        <h5> 
+            &nbsp;&nbsp;it is a measure of how much an elliptical orbit deviates from a perfect circle
+        </h5>
+    <br><br><br><br><br><br>
+    <img src="orbital.jpg" class="orbital"><br><br><br>
+    <h5><font color="orange">•Temperature:</font> <br></h5>
+      <br><br><br>
+      <p>&nbsp;&nbsp;
+        It’s in a special place called the “habitable zone,” where it’s not too hot and not too cold. This means it might have the right conditions for life, like having water. 💧
+       <br>
+  </p>
+
+        <br><br><br><br> <br><br><br><br> <br><br><br><br> 
+        <center><b><font color="orande">Discovered :</font>&nbsp;&nbsp;&nbsp;&nbsp;2016<br><br><font color="orange">Planet Type :</font>&nbsp;&nbsp;&nbsp;&nbsp;Super Earth</b></center><b><br><center><font color="orande">Detection method :</font>&nbsp;&nbsp;&nbsp;&nbsp;Radial Velocity</b></center></b>
+        <br><br><br><br> 
+        <center><b><font color="red">Discovered by : European Southern Observatory</font></b></center><br><br>
+        
+<!-- JavaScript for Sliding Functionality -->
+<script>
+    function calculateTime(mode) {
+      let speed, time;
+
+      switch (mode) {
+    case 'auto':
+        speed = 60; // Million miles per hour
+        time = 47; // Years
+        break;
+    case 'bullet':
+        speed = 120; // Million miles per hour
+        time = 24; // Years
+        break;
+    case 'jet':
+        speed = 600; // Million miles per hour
+        time = 5; // Years
+        break;
+    case 'voyager':
+        speed = 38; // Million miles per hour (Voyager 1 speed)
+        time = 75; // Years
+        break;
+    case 'light':
+        speed = 671; // Million miles per hour (Speed of light)
+        time = 4; // Years
+        break;
+    default:
+        speed = '--';
+        time = '--';
+}
+      document.getElementById('speedValue').innerText = speed;
+      document.getElementById('timeValue').innerText = time;
+    }
+  </script>
+<script>
+    // Get modal and open/close elements
+    var modal = document.getElementById("reviewModal");
+    var btn = document.getElementById("openModal");
+    var span = document.getElementsByClassName("close")[0];
+    var pageContent = document.querySelector(".page-content");
+
+btn.onclick = function() {
+modal.style.display = "block";
+pageContent.style.opacity = "10"; // Reduce opacity of the page content
+}
+
+span.onclick = function() {
+modal.style.display = "none";
+pageContent.style.opacity = "1"; // Reset opacity when modal is closed
+}
+
+window.onclick = function(event) {
+if (event.target == modal) {
+    modal.style.display = "none";
+    pageContent.style.opacity = "1"; // Reset opacity when modal is closed
+}
+}
+
+    // Handle form submission
+    document.getElementById('reviewForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        // Display a success message or clear the form
+        alert("Thank you for your review!");
+
+        // Close modal after submission
+        modal.style.display = "none";
+
+        // Clear form inputs
+        document.getElementById('reviewForm').reset();
+    });
+</script>
+</body>
+</html>
