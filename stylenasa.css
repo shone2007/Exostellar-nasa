@@ -525,3 +525,46 @@ margin-left: 5s0px;
     height: 500px;
     margin-left: 5s0px;
     }
+/* ===== Responsive fixes for images, videos, and galleries ===== */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero video {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.image-button img {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.popup-content {
+    width: 90%;
+    max-width: 900px;
+}
+
+.navbar ul.nav-links {
+    flex-wrap: wrap;
+}
+
+.navbar ul.nav-links li {
+    flex: 1 1 auto;
+    min-width: 120px;
+}
